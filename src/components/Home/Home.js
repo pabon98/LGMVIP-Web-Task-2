@@ -11,16 +11,15 @@ const Home = () => {
     setOpen(!open);
   };
   useEffect(() => {
-    if(open){
-        fetch("https://reqres.in/api/users?page=1")
-      .then((res) => res.json())
-      .then((dt) => {
-        setData(true);
-        setUsers(dt.data);
-      });
-    }
-    else{
-        setData(false)
+    if (open) {
+      fetch("https://reqres.in/api/users?page=1")
+        .then((res) => res.json())
+        .then((dt) => {
+          setData(true);
+          setUsers(dt.data);
+        });
+    } else {
+      setData(false);
     }
   }, [open]);
 
@@ -43,7 +42,13 @@ const Home = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <NavLink className="text-white nav" to="/home">
+            <NavLink
+              className="nav"
+              to="/home"
+              style={(isActive) => ({
+                color: isActive ? "white" : "blue",
+              })}
+            >
               home
             </NavLink>
             <div class="navbar-nav ms-auto">
@@ -57,13 +62,13 @@ const Home = () => {
           </div>
         </div>
       </nav>
-      <div >
+      <div>
         <h1>Our Users</h1>
-       {
-           open && !data &&( <div class="spinner-border" role="status">
-           <span class="visually-hidden">Loading...</span>
-         </div>)
-       }
+        {open && !data && (
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        )}
         <div className="row">
           {open &&
             users.map((user) => (
