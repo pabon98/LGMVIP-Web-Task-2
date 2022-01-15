@@ -3,8 +3,8 @@ import React from "react";
 const User = ({ user }) => {
   const { avatar, first_name, last_name, email, id } = user;
   return (
-    <div className="">
-      <div class="row row-cols-1 row-cols-md-2 gx-3 gy-5">
+    <div className="container ms-5">
+      <div class="row row-cols-md-2">
         <div class="col">
           <div class="card">
             <img src={avatar} class="card-img-top" alt="..." />

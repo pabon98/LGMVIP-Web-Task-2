@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#lgm">
             LGMTASK-02
@@ -49,7 +49,7 @@ const Home = () => {
             <div class="navbar-nav ms-auto">
               <button
                 onClick={() => getUsers()}
-                className={`btn btn-${open ? "danger" : "warning"}`}
+                className={`btn btn-${open ? "danger" : "success"}`}
               >
                 {open ? "Close Users" : "Get Users"}
               </button>
@@ -57,7 +57,7 @@ const Home = () => {
           </div>
         </div>
       </nav>
-      <div className="container">
+      <div >
         <h1>Our Users</h1>
        {
            open && !data &&( <div class="spinner-border" role="status">
@@ -67,7 +67,7 @@ const Home = () => {
         <div className="row">
           {open &&
             users.map((user) => (
-              <div className="col-md-4">
+              <div className="col-md-4 gy-3">
                 <User key={user.id} user={user}></User>
               </div>
             ))}

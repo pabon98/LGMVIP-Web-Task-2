@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
- Live Site: https://grid-users.netlify.app/.
+ Live Site: https://grid-users.netlify.app/
 
 ## Available Scripts
 
